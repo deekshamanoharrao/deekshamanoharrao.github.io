@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+  Updates for JPN Spring 2023
+-->
+
+<html lang="en" class="h-100">
+
+<head>
+
+  
+  
+  
+
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Homework 8 Charts">
+  <meta property="og:description" content="These contain the plots for the project that uses vega-lite for interactive viz!">
+  <meta property="og:image" content="assets/pngs/Capture.png">
+
+  <title>Homework 8 Charts</title>
+  <meta name="description" content="These contain the plots for the project that uses vega-lite for interactive viz!">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-shrink-0 container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-themed">
+
+  <a class="navbar-brand" href="/"><h5><b>IS445 Jekyll Template</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-1x fa-bars text-themed"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link active" href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link " href="/blog/">Blog</a>
+
+      <a class="nav-item nav-link " href="/about/">About</a>
+
+      
+
+      <span id="theme-toggler" class="nav-item nav-link" role="button" onclick="toggleTheme()"></span>
+    </div>
+  </div>
+
+</nav>
+    <div class="col-lg-10 mx-auto mt-5 markdown-body">
+  <h1 id="homework-8-charts">Homework 8 Charts</h1>
+<p>3 charts for assignment</p>
+
+<p>Plot 1:</p>
+
+<vegachart schema-url="/assets/json/Vis2.json" style="width: 100%"></vegachart>
+
+<p>Explanation for Plot 1:</p>
+
+<p>Description of the Plot: 
+The plot visualizes the distribution of building statuses in a dataset. Each bar represents a specific building status, providing a quick overview of the count of buildings associated with each status. The dataset is derived from building inventory data, and the focus is on understanding the distribution of building statuses.</p>
+
+<p>Design Choices Encodings :
+1) Mark: The choice of a vertical bar chart (mark=”bar”) is suitable for showing the count or frequency of different categories, in this case, building statuses. 
+2) Width and Height: The dimensions of the chart (width=600, height=300) are chosen to balance clarity and space usage, providing a compact yet informative visualization. 
+3) Encodings: The nominal encoding (x) is employed for the “Building Status,” allowing distinct categories to be displayed along the x-axis. The count is aggregated and represented on the y-axis (y) as the height of the bars.</p>
+
+<p>Colormaps:
+For the color encoding, a categorical color scheme (“category10”) was deliberately chosen to represent different building statuses. This decision enhances visual clarity by providing distinct colors for each category, facilitating easy interpretation. The “category10” scheme’s predefined set ensures clear differentiation, contributing both functionally and aesthetically to the chart.</p>
+
+<p>Transformations: 
+The plot includes a transformation (transform_filter) to filter the data, displaying only buildings acquired after the year 2000. This allows for a focused exploration of recent building statuses, contributing to a more relevant and up-to-date visualization. This design aims to offer a clear and concise representation of building statuses, emphasizing recent acquisitions through the applied transformation. The color choice helps draw attention to the bars, making the plot visually engaging and accessible.</p>
+
+<p>Overlap with Homework 7 :
+In the transition from Homework #7 to Homework #8, I redefined the initial bar chart by introducing a color map in Homework #8. For it to work with Altair a critical alteration involved removing the quotation marks around the numerical values specified for the “mark” and “width” parameters, which differed from the Homework #7 syntax. The chart now visualizes building status counts, with each status uniquely colored using a categorical color scheme. Additionally, a transformation filters out buildings acquired before 2000, refining the focus for a more relevant and insightful representation. This adaptation enhances the clarity and interpretability of the visualization.</p>
+
+<p>Plot 2:</p>
+
+<vegachart schema-url="/assets/json/Vis3.json" style="width: 100%"></vegachart>
+
+<p>Explanation for Plot 2:</p>
+
+<p>Description of the plot:</p>
+
+<p>The second visualization explores the relationship between counties and the mean square footage of buildings, focusing on those with square footage exceeding 20,000. The chart employs a bar mark to represent the mean square footage for each county, with the color intensity indicating the count of buildings meeting the specified square footage criterion.</p>
+
+<p>Design Choices - Encodings :</p>
+
+<p>Mark: The choice of a vertical bar chart (mark=”bar”) is suitable for showing the count or frequency of different categories, in this case, building statuses. Width and Height: The dimensions of the chart (width=600, height=300) are chosen to balance clarity and space usage, providing a compact yet informative visualization.
+For the encoding choices, the X-axis represents the counties, offering a categorical view, while the Y-axis aggregates the mean square footage, providing a quantitative measure. This selection aims to highlight variations in square footage across different counties.</p>
+
+<p>Design Choices - Color Map :</p>
+
+<p>The color scheme utilizes a quantitative color map, where the intensity of color signifies the count of buildings. This choice aims to emphasize the distribution and density of buildings with square footage exceeding 20,000 in each county. The Viridis color map was chosen for its perceptual uniformity, ensuring accurate interpretation of building count variations.</p>
+
+<p>Transformations :</p>
+
+<p>A data transformation is applied to aggregate the average square footage for each county and subsequently filter out counties where the average square footage is below the threshold of 20,000. This transformation enhances the focus on counties with larger buildings, providing a clearer picture of the distribution.</p>
+
+<p>Overlap with Homework 7:
+In transitioning from Homework #7 to Homework #8, I modified the visualization approach while building upon the foundational aspects of Homework #7. In Homework #7, I employed a line chart with a continuous green color mark to represent the mean square footage across different counties. However, in Homework #8, I chose a bar chart for a more categorical representation of mean square footage, incorporating additional features for enhanced insights.</p>
+
+<p>Changes Made:
+For it to work with Altair a critical alteration involved removing the quotation marks around the numerical values specified for the “mark” and “width” parameters, which differed from the Homework #7 syntax. In Homework #8, the chart design was adapted to a bar mark, utilizing color as a quantitative representation of building count within each county. The color intensity indicates the count of buildings with square footage exceeding 20,000, offering a nuanced perspective on the distribution of larger buildings across counties. Additionally, a data transformation was introduced to filter out counties with mean square footage below the threshold of 20,000, focusing the visualization on relevant data points.</p>
+
+<p>Interactivity Plot :</p>
+
+<vegachart schema-url="/assets/json/Vis4.json" style="width: 100%"></vegachart>
+
+<p>Explanation for the interactivity plot :</p>
+
+<p>In this visualization, I incorporated interactivity using a brush selection tool. The first chart, chart1_interactivity, is a heatmap with square footage on the x-axis, agency names on the y-axis, and color representing the count of buildings falling within each bin. The brush selection is applied to both the x and y axes, allowing users to interactively select a subset of the data. The second chart, chart2, is a bar graph displaying the count of buildings based on square footage. The bar chart dynamically updates based on the brush selection in the first chart. This interactivity enhances the exploration of building distribution across different agencies and square footage ranges. Users can visually identify patterns and relationships within the data by focusing on specific regions of interest, making the exploration process more intuitive and insightful.</p>
+
+<!-- these are written in a combo of html and liquid -->
+
+<div class="left">
+<a class="m-1 btn btn-outline-primary btn-2 " href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv">
+  The Data
+</a>
+</div>
+
+<div class="right">
+<a class="m-1 btn btn-outline-primary btn-2 " href="https://github.com/deekshamanoharrao/deekshamanoharrao.github.io/tree/main/python_notebooks/Workbook.ipynb">
+  The Analysis
+</a>
+</div>
+
+
+</div>
+  </main>
+  <footer class="mt-auto py-3 text-center">
+
+  <small class="text-muted mb-2">
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    by <strong>A. P. Corgi</strong>
+  </small>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="mailto:username@domain.com"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#db4437'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fas fa-envelope fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.github.com/jnaiman"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.twitter.com/your_username"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#1da1f2'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-twitter fa-1x"></i>
+    </a><a class="social mx-1"  href="https://www.youtube.com/your_channel_name"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#ff0000'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-youtube fa-1x"></i>
+    </a>
+
+</div>
+
+  Theme by <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a> and <a href="https://github.com/4dcu-be/4dcu.be">4dcu.be</a>.
+
+  
+<!--<small id="attribution">
+    theme <a href="https://github.com/YoussefRaafatNasry/portfolYOU">portfolYOU</a>
+  </small>
+-->
+
+</footer>
+
+
+<!-- Custom page specific js files -->
+  
+    <script src='/assets/js/vega.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-lite.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-embed.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/justcharts.js' type="text/javascript"></script>
+  
+
+
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+</body>
+
+<!--
+end of checks! JPN
+-->
+
+</html>
