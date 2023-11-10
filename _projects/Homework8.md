@@ -82,6 +82,6 @@ In this visualization, I incorporated interactivity using a brush selection tool
 </div>
 
 <div class="right">
-{% include elements/button.html link="https://github.com/deekshamanoharrao/deekshamanoharrao.github.io/tree/main/python_notebooks/Workbook.ipynb" text="The Analysis" %}
+{% include elements/button.html link="https://github.com/deekshamanoharrao/deekshamanoharrao.github.io/tree/main/Workbook.ipynb" text="The Analysis" %}
 </div>
 
