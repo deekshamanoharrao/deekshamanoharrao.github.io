@@ -10,7 +10,7 @@ custom_js:
   - justcharts
 ---
 
-
+Group Members : Deeksha Manohar Rao and Sachit Vasudev
 # Final Project 3.1 
 
 Plot 1:
